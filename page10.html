@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Crisis and the Future Earth – Ocean Wave Kinetic Sculpture</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #005073;
+      color: white;
+      text-align: center;
+      padding: 2em 1em;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #b2e6f2;
+      margin-top: 0.5em;
+    }
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container {
+      padding: 2em 4em;
+      background-color: white;
+    }
+    h2 {
+      color: #005073;
+    }
+    blockquote {
+      font-style: italic;
+      border-left: 4px solid #aaa;
+      padding-left: 1em;
+      margin: 1.5em 0;
+      color: #555;
+    }
+    ul {
+      margin-top: 1em;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      background-color: #005073;
+      color: white;
+      padding: 1em;
+      font-size: 0.9em;
+    }
+    a {
+      color: #007ca6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Energy Crisis and the Future Earth</h1>
+    <p>Kinetic Sculpture Reflecting Ocean Pollution and Sustainability</p>
+  </header>
+
+  <img src="https://i.redd.it/zvs3dos4puue1.png" alt="Ocean Wave Sculpture Hero Image" class="hero-image">
+
+  <div class="container">
+    <section>
+      <h2>Introduction</h2>
+      <p>This interactive kinetic sculpture draws attention to one of the most pressing yet often overlooked environmental crises—marine pollution. Inspired by the mesmerizing wave machines of Rubin Margolin, the sculpture uses 100 blue spheres suspended in a square matrix, mimicking ocean waves. However, at the center, the aesthetic is interrupted by plastic bottles, crushed aluminum cans, and other floating trash, representing the devastating presence of non-biodegradable waste in our seas. This exhibit makes a strong visual and mechanical statement about energy sustainability, pollution, and the long-term environmental consequences of consumer waste.</p>
+    </section>
+
+    <section>
+      <h2>Exhibit Concept</h2>
+      <p>The sculpture consists of mechanically driven pulleys that move blue spheres in sinusoidal wave patterns across a 10×10 grid. Most of the spheres are ocean blue, simulating the sea, while 6–8 central positions are replaced with 3D replicas of real-world trash commonly found in the ocean—plastic bottles, soda cans, polystyrene, etc. The fluidity of the wave motion is visually disrupted by the unnatural rigidity of the trash elements, creating a jarring emotional experience for viewers.</p>
+    </section>
+
+    <section>
+      <h2>Interactive Element</h2>
+      <p>Visitors will be able to adjust the wave speed, direction, and height using a control panel. A digital interface will also simulate what happens over time as trash accumulates in oceans. By dragging more objects into the virtual sea, users will see the visual harmony of the wave disrupted—mirroring real-life consequences of marine pollution. QR codes near each type of trash link to stats on its decomposition time, energy used to manufacture it, and long-term ecological effects.</p>
+    </section>
+
+    <section>
+      <h2>Scientific and Environmental Context</h2>
+      <ul>
+        <li>Over 8 million tonnes of plastic enter the oceans each year (Source: <a href="https://en.wikipedia.org/wiki/Great_Pacific_garbage_patch" target="_blank">Wikipedia</a>)</li>
+        <li>Plastic takes 400–1000 years to degrade, releasing microplastics harmful to marine life.</li>
+        <li>Non-biodegradable ocean waste contributes to 5–10% of global energy-related emissions due to production, transport, and decomposition.</li>
+        <li>Ocean gyres like the Great Pacific Garbage Patch span over 1.6 million km²—larger than India.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quotes & Reflections</h2>
+      <blockquote>
+        "We didn’t inherit the ocean from our ancestors—we borrowed it from our children." – Environmentalist Saying
+      </blockquote>
+      <blockquote>
+        "This exhibit is not just about art. It's about understanding that every piece of plastic made still exists—and it's still floating somewhere." – Exhibit Curator</blockquote>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 Science Curatorial Team, CRTL | National Council of Science Museums
+  </footer>
+
+<style>
+  body {
+    margin-bottom: 80px; /* Give space for the fixed nav bar */
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 1000;
+    border-top: 1px solid #ccc;
+  }
+
+  .nav-buttons a {
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: sans-serif;
+  }
+
+  .nav-buttons a.disabled {
+    background-color: #cccccc;
+    pointer-events: none;
+  }
+</style>
+
+<div class="nav-buttons">
+  <a id="prevBtn" href="#" class="disabled">Previous</a>
+  <a id="nextBtn" href="#" class="disabled">Next</a>
+</div>
+
+<script>
+  (function() {
+    const currentPage = window.location.pathname.match(/page(\d+)\.html/);
+    if (!currentPage) return;
+    const currentNum = parseInt(currentPage[1], 10);
+    const prev = currentNum > 1 ? `page${currentNum - 1}.html` : null;
+    const next = currentNum < 11 ? `page${currentNum + 1}.html` : null;
+
+    if (prev) {
+      const prevBtn = document.getElementById('prevBtn');
+      prevBtn.href = prev;
+      prevBtn.classList.remove('disabled');
+    }
+
+    if (next) {
+      const nextBtn = document.getElementById('nextBtn');
+      nextBtn.href = next;
+      nextBtn.classList.remove('disabled');
+    }
+  })();
+</script>
+
+</body>
+</html>

@@ -1,35 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Art Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .gallery img {
-            margin: 10px;
-            max-width: 200px;
-            max-height: 200px;
-            border: 2px solid #ddd;
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Future I Chose – A Story of Sustainable Living</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #eafbea, #f3efff);
+      overflow-x: hidden;
+      color: #2c3e50;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to top, #000428, #004e92);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4em;
+      margin-bottom: 0.3em;
+      z-index: 2;
+      background: linear-gradient(to right, #ff6a00, #ee0979);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      font-size: 1.6em;
+      color: #d1f1ff;
+      z-index: 2;
+    }
+
+    canvas#bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4em 2em;
+      background: linear-gradient(to right, #ffffff, #f0fff5);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+    }
+
+    .container p, .container blockquote {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .container p.reveal, .container blockquote.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #1c3c50;
+    }
+
+    blockquote {
+      font-style: italic;
+      border-left: 4px solid #ffa07a;
+      padding-left: 1em;
+      margin: 2em 0;
+      background: #fffaf0;
+      color: #5a5a5a;
+    }
+
+    footer {
+      text-align: center;
+      background: linear-gradient(to right, #1c3c50, #294e70);
+      color: white;
+      padding: 2em 1em;
+      font-size: 0.9em;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffffcc;
+      z-index: 1000;
+      border-top: 1px solid #ccc;
+      backdrop-filter: blur(6px);
+    }
+
+    .nav-buttons a {
+      padding: 10px 20px;
+      text-decoration: none;
+      background-image: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      font-family: sans-serif;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-buttons a.disabled {
+      background-image: none;
+      background-color: #cccccc;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Art Portfolio</h1>
-    <div class="gallery">
-        <img src="path/to/your/art1.jpg" alt="Art 1">
-        <img src="path/to/your/art2.jpg" alt="Art 2">
-        <img src="path/to/your/art3.jpg" alt="Art 3">
-        <!-- Add more artwork as needed -->
-    </div>
+  <header>
+    <canvas id="bg"></canvas>
+    <h1>The Future I Chose</h1>
+    <p>A Story of Sustainable Living</p>
+  </header>
+
+  <div class="container" id="story">
+    <p>It all began on an ordinary morning. I stood on my city rooftop, gazing at the distant skyline, cloaked in the quiet haze of pollution. The world around me buzzed with convenience—instant light, water on demand, food wrapped in plastic. But something inside me felt distant. Was this the kind of future I wanted to leave behind?</p>
+    <p>That day, I made a decision—not to escape, but to <strong>rebuild</strong>. To live differently. To live responsibly.</p>
+    <p>I found a patch of land, kissed by sun and open to the winds. There, I began again—constructing a <strong>geodesic dome</strong> from prefabricated triangles. It was not just a shelter, but a symbol. Efficient, durable, and minimal—it stood proud, harnessing the very forces of nature to breathe with the seasons.</p>
+    <p>For <strong>energy</strong>, I turned to the skies. My <strong>parabolic solar reflector</strong> heated a Stirling engine, storing its energy in molten salt. When the sun set, a <strong>gravity battery</strong>—built into an old well—lowered a weight and spun a generator. Quiet. Clean. Constant. It powered my evenings with the grace of falling mass.</p>
+    <p>Food came from towers of green—my <strong>hydroponic garden</strong> thriving on sunlight, water, and trace nutrients. No pesticides. No waste. Each sprout whispered a promise: nourishment from nature, not conquest over it.</p>
+    <p><strong>Water</strong> fell from the skies into harvested tanks, filtered through sand and charcoal. Every drop reminded me that true luxury is <em>conservation</em>.</p>
+    <p>For <strong>learning</strong>, I slipped on a VR headset and wandered into virtual classrooms—on glaciers, under oceans, across time. I learned from global voices while rooted in one place, burning no fuel but curiosity.</p>
+    <p>Work followed passion. With a compact <strong>3D printer and CNC router</strong>, I designed objects, tools, and art—printed sustainably, shared digitally, manufactured locally. <strong>Personal manufacturing</strong> became my livelihood and my contribution.</p>
+    <p>And then came <strong>art</strong>. In the center of my dome stood a kinetic sculpture—a grid of blue spheres dancing in waves. But in its center floated trash: plastic bottles, crushed cans. It jarred the eye. It stirred the soul. Beauty met reality, and truth emerged.</p>
+    <p>To <strong>trade</strong>, I used digital currencies. <strong>Cryptocurrency</strong> allowed me to connect globally, earn ethically, and bypass the inefficiencies of traditional finance. With <strong>proof-of-stake</strong> systems powered by renewables, every transaction respected the Earth.</p>
+    <p>One evening, I stood before a 3D terrain map of Mumbai, aglow with projections of rising sea levels. I saw where the tides would reach if we did nothing. And I knew—I hadn’t left the city to run away. I had left to build a model of what the future could be.</p>
+    <blockquote>“The future isn't something we inherit—it’s something we create, moment by mindful moment.”</blockquote>
+  </div>
+
+  <footer>
+    © 2025 Science Curatorial Team, CRTL | National Council of Science Museums
+  </footer>
+
+  <div class="nav-buttons">
+    <a id="prevBtn" href="#" class="disabled">Previous</a>
+    <a id="nextBtn" href="#" class="disabled">Next</a>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/28/audio_a64dc5e674.mp3?filename=ethereal-ambient-144580.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    (function() {
+      const currentPage = window.location.pathname.match(/page(\d+)\.html/);
+      if (!currentPage) return;
+      const currentNum = parseInt(currentPage[1], 10);
+      const prev = currentNum > 1 ? `page${currentNum - 1}.html` : null;
+      const next = currentNum < 11 ? `page${currentNum + 1}.html` : null;
+
+      if (prev) {
+        const prevBtn = document.getElementById('prevBtn');
+        prevBtn.href = prev;
+        prevBtn.classList.remove('disabled');
+      }
+
+      if (next) {
+        const nextBtn = document.getElementById('nextBtn');
+        nextBtn.href = next;
+        nextBtn.classList.remove('disabled');
+      }
+    })();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.container p, .container blockquote').forEach(el => observer.observe(el));
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg'), alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const geometry = new THREE.SphereGeometry(0.5, 32, 32);
+    const material = new THREE.MeshStandardMaterial({ color: 0x00aaff, transparent: true, opacity: 0.5 });
+    for (let i = 0; i < 50; i++) {
+      const sphere = new THREE.Mesh(geometry, material);
+      sphere.position.set(
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 10
+      );
+      scene.add(sphere);
+    }
+
+    const light = new THREE.PointLight(0xffffff, 1);
+    light.position.set(5, 5, 5);
+    scene.add(light);
+
+    camera.position.z = 5;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      scene.rotation.y += 0.001;
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
