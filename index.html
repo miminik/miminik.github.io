@@ -1,9 +1,142 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=page1.html" />
-  </head>
-  <body>
-    <p>If you are not redirected automatically, <a href="page1.html">click here</a>.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blender Showcase</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #1e1e1e;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #cccccc;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #333;
+    }
+
+    .video-container {
+      flex: 1 1 480px;
+      max-width: 640px;
+      margin: 1rem;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .text-container {
+      flex: 1 1 300px;
+      max-width: 500px;
+      margin: 1rem;
+    }
+
+    .video-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .video-description {
+      font-size: 1rem;
+      color: #cccccc;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .text-container {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Blender Showcase</h1>
+    <p>Scroll to explore my animations</p>
+  </header>
+
+  <main id="content"></main>
+
+  <script>
+    const videoCount = 12; // adjust to match your actual count
+    const content = document.getElementById('content');
+
+    for (let i = 1; i <= videoCount; i++) {
+      const videoId = String(i).padStart(3, '0');
+
+      const section = document.createElement('section');
+      section.className = 'section';
+
+      const videoContainer = document.createElement('div');
+      videoContainer.className = 'video-container';
+      const video = document.createElement('video');
+      video.src = `video${videoId}.mp4`;
+      video.loop = true;
+      video.muted = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.controls = false;
+
+      videoContainer.appendChild(video);
+
+      const textContainer = document.createElement('div');
+      textContainer.className = 'text-container';
+
+      const title = document.createElement('div');
+      title.className = 'video-title';
+      title.innerText = `Video ${videoId}`;
+
+      const description = document.createElement('div');
+      description.className = 'video-description';
+      description.innerText = `This is a placeholder description for video ${videoId}. You can replace this text with about 50 words describing your Blender creation, the concept, or any background story you'd like to share.`;
+
+      textContainer.appendChild(title);
+      textContainer.appendChild(description);
+
+      section.appendChild(videoContainer);
+      section.appendChild(textContainer);
+      content.appendChild(section);
+    }
+  </script>
+
+</body>
 </html>
